@@ -4,7 +4,7 @@ When motion is detected on CCTV camera, Google Generative AI sends descitption o
 This is a quick guide your Home Assistant to take a snapshot when motion is detected on your IP Camera, have Google Generative AI Conversation integration to describe the snapshot, and send a notification with the snapshot and description.
 
 # Requirements: 
-1. Add your phone to HA by installing teh app on your device and logging in.
+1. Add your phone to HA by installing the app on your device and logging in.
 2. Your cameras need to be added in HA, they will need to support motion detection and HA must have an entity to be able to see that motion alarm status.
 
 # Getting Started

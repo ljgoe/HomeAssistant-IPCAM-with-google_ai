@@ -1,4 +1,15 @@
-# Home Assistant with Google Generative AI
+<a name="readme-top"></a>
+<!--
+
+<!-- PROJECT LOGO -->
+<br />
+<div align="center">
+  <a href="https://testit.vc/">
+    <img src="Images/logo.png" alt="Logo" width="80" height="80">
+  </a>
+  <h3 align="center">Home Assistant with Google Generative AIl</h3>
+</div>
+
 When motion is detected on CCTV camera, Google Generative AI sends descitption of the snapshot to your phone
 
 This is a quick guide your Home Assistant to take a snapshot when motion is detected on your IP Camera, have Google Generative AI Conversation integration to describe the snapshot, and send a notification with the snapshot and description.

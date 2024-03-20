@@ -36,7 +36,7 @@ This is a quick guide your Home Assistant to take a snapshot when motion is dete
       <img src="Images/Edit_in_Yaml.png">
 </p>
 
-5. Create a SCRIPT called: "Driveway - Snapshot, AI & Notification" with the following code: https://github.com/ljgoe/HomeAssistant-google_ai/blob/main/ai_notification_script This script takes the snapshot, gets Google AI to describe it and then send you the notification with what the AI sees and with snapshot image attached. You can run this manually to test. :)
+5. Create a SCRIPT called: "Driveway - Snapshot, AI & Notification" with the following code: [https://github.com/ljgoe/HomeAssistant-google_ai/blob/main/ai_notification_script](https://github.com/ljgoe/HomeAssistant-IPCAM-with-google_ai/blob/main/ai_notification_script) This script takes the snapshot, gets Google AI to describe it and then send you the notification with what the AI sees and with snapshot image attached. You can run this manually to test. :)
 <p align="left">
     <img src="Images/Scripts.png">
 </p>

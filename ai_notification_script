@@ -1,0 +1,68 @@
+alias: Camera - Driveway - Snapshot, AI & Notification
+sequence:
+  - service: camera.snapshot
+    metadata: {}
+    data:
+      filename: ./www/snapshots/driveway_snapshot1.jpg
+    target:
+      device_id: ***YOUR_CAMERAS_DEVICE_ID***
+    enabled: true
+  - delay:
+      hours: 0
+      minutes: 0
+      seconds: 0
+      milliseconds: 500
+    enabled: true
+  - service: camera.snapshot
+    metadata: {}
+    data:
+      filename: ./www/snapshots/driveway_snapshot2.jpg
+    target:
+      device_id: ***YOUR_CAMERAS_DEVICE_ID***
+    enabled: true
+  - delay:
+      hours: 0
+      minutes: 0
+      seconds: 0
+      milliseconds: 500
+    enabled: true
+  - service: camera.snapshot
+    metadata: {}
+    data:
+      filename: ./www/snapshots/driveway_snapshot3.jpg
+    target:
+      ddevice_id: ***YOUR_CAMERAS_DEVICE_ID***
+    enabled: true
+  - service: google_generative_ai_conversation.generate_content
+    metadata: {}
+    data:
+      prompt: >-
+        Motion has been detected, compare and very briefly describe what you see
+        in the following sequence of images from my driveway camera.
+        What do you think caused the motion alarm? If a person or car is
+        present, describe them in detail. Do not describe stationary objects or
+        buildings. If you see no obvious causes of motion, reply with "Camera
+        has detected motion however no obvious motion observed comparing
+        snapshots". Your message needs to be short enough to fit in a phone
+        notification. 
+      image_filename:
+        - ./www/snapshots/driveway_snapshot1.jpg
+        - ./www/snapshots/driveway_snapshot2.jpg
+        - ./www/snapshots/driveway_snapshot3.jpg
+    response_variable: generated_content
+  - if:
+      - condition: template
+        value_template: >
+          {{ generated_content['text'] == ' Camera has detected motion however
+          no obvious motion observed comparing snapshots.' }} 
+    then:
+      - stop: ""
+    else:
+      - service: notify.mobile_app_***YOUR_Phone**
+        metadata: {}
+        data:
+          title: Driveway Motion Detected
+          message: "{{generated_content['text'] }}"
+          data:
+            image: /local/snapshots/driveway_snapshot2.jpg
+mode: single

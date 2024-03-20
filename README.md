@@ -30,7 +30,7 @@ This is a quick guide your Home Assistant to take a snapshot when motion is dete
 
 3. Ensure your camera has motion detection turned on and that HA can see the alarm when motion is detected.
 
-4. Create a AUTOMATION named: "Driveway - Snapshot on motion" using the following code: [ai_notifications_automation](https://github.com/ljgoe/HomeAssistant-google_ai/blob/main/ai_notifications_automation) Note that switching to visual editor will help you find your camera and entity id's. This automation will run the script (created in the next step) when HA receives the motion alarm from your camera. Choose Edit in Yaml in the top right corner
+4. Create a AUTOMATION named: "Driveway - Snapshot on motion" using the following code: [ai_notifications_automation](https://github.com/ljgoe/HomeAssistant-IPCAM-with-google_ai/blob/main/ai_notifications_automation) Note that switching to visual editor will help you find your camera and entity id's. This automation will run the script (created in the next step) when HA receives the motion alarm from your camera. Choose Edit in Yaml in the top right corner
 <p align="left">
     <img src="Images/Automation1.png">
       <img src="Images/Edit_in_Yaml.png">

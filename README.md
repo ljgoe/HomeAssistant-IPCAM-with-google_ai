@@ -41,10 +41,10 @@ This is a quick guide your Home Assistant to take a snapshot when motion is dete
     <img src="Images/Scripts.png">
 </p>
 
-You should now get a notification describing the image when your camera detects motion and HA takes the snapshot. Hopefully it gives you an idea how to do, you can edit the scripts prompt part to give you better answers and you can duplicate these automations and scripts for as many cameras as you like. Fi
+You should now receive a notification describing the image when your camera detects motion and takes a snapshot. This should give you an idea of how it works. You can edit the script’s prompt to get more accurate responses and duplicate these automations and scripts for as many cameras as you need.
 
-This one takes 3 snapshots 0.5 seconds apart, sends those 3 images google to compare and if google notices no significant motion, the notification WILL NOT get sent.
+This one takes 3 snapshots 0.5 seconds apart, sends those 3 images google to compare and if google notices no significant motion, the notification will not be delivered.
 
-This hopefully cuts down on false notifications or ones from trees ect moving! It also helps the AI notice actual movement of things like cars... BE AWARE: If you change the google prompt, especially the "If you see no obvious causes of motion, reply with "Camera has detected motion however no obvious motion observed comparing snapshots". part, you will also have to change the IF statement part to suit.
+This reduces false notifications from moving objects like trees and helps the AI detect significant movements such as cars. Note that if you modify the Google prompt “If you see no obvious causes of motion, reply with ‘Camera has detected motion however no obvious motion observed comparing snapshots’,” you will also need to adjust the corresponding IF statement accordingly.
 
-ALSO NOTE: this sends 3 images to google, so if you get a "Error generating content: 400 Request payload size exceeds the limit" error, if you manually run the script, your camera snapshots are too big, and you have to adjust it back to 2 images by removing the last snapshot action, the 0.5 second delay before it and then removing the reference to the 3rd image from under image_filename in the google ai service part....
+Note: This script sends 3 images to Google. If you encounter the “Error generating content: 400 Request payload size exceeds the limit” error, it means your camera snapshots are too large. To resolve this, manually run the script and adjust it to send only 2 images. You can do this by removing the last snapshot action, the preceding 0.5-second delay, and the reference to the 3rd image under image_filename in the Google AI service section.
